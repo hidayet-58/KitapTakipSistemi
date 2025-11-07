@@ -83,10 +83,10 @@ namespace KitapTakipSistemi
 
                 Console.WriteLine($"\n Başarılı: '{kitap.Ad}' kitabı {uye.AdSoyad} adlı üyeye ödünç verildi.");
             }
-            catch (Exception ex)
+            catch (Exception hatayakala)
             {
            
-                Console.WriteLine($"\n  Kitap ödünç verme işlemi sırasında bir hata oluştu: {ex.Message}");
+                Console.WriteLine($"\n  Kitap ödünç verme işlemi sırasında bir hata oluştu: {hatayakala.Message}");
             }
         }
         public void KitapIadeEt(int uyeId, int kitapId)
@@ -131,7 +131,7 @@ namespace KitapTakipSistemi
             
             var odunctekiKitaplar = this.Kitaplar.Where(k => k.Durum == false).ToList();
 
-            Console.WriteLine("\n--* Ödünçteki Kitaplar (LINQ) *--");
+            Console.WriteLine("\n--* Ödünçteki Kitaplar *--");
 
             if (odunctekiKitaplar.Any())
             {

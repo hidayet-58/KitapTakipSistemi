@@ -1,6 +1,7 @@
 ﻿
 
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 
 namespace KitapTakipSistemi.Models
@@ -25,10 +26,11 @@ namespace KitapTakipSistemi.Models
 
             string kitaplar = string.Join(",", OduncAlinanKitaplar.Select(k => k.Ad));//virgülle ayırdık ödünç alınan kitapları.
             if (string.IsNullOrWhiteSpace(kitaplar))
+            
                 kitaplar = "yok";
 
-            return $"ID: {this.Id}, Ad Soyad: {this.AdSoyad}, Ödünçteki Kitaplar: {kitaplar}";
-
+                return $"ID: {this.Id}, Ad Soyad: {this.AdSoyad}, Ödünçteki Kitaplar: {kitaplar}";
+        
         }
     }
 }
